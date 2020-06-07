@@ -101,7 +101,7 @@
                 <ul class="nav side-menu">
                   <li class="<?php if($this->session->userdata('halaman') == 'obat'){ echo 'active'; } ?>"><a href="<?=base_url()?>obat"><i class="fa fa-medkit"></i> Data Obat</a>
                   </li>
-                  <li class="<?php if($this->session->userdata('halaman') == 'obat_pasien'){ echo 'active'; } ?>"><a href="<?=base_url()?>obat_pasien"><i class="fa fa-user-md"></i> Obat Pasien</a>
+                  <li class="<?php if($this->session->userdata('halaman') == 'obat_pasien'){ echo 'active'; } ?>"><a href="<?=base_url()?>obat_pasien"><i class="fa fa-user-md"></i> Resep Pasien</a>
                   </li>
                 </ul>
               </div>
