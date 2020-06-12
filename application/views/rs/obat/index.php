@@ -6,13 +6,13 @@
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Data Dokter</h2>
+                        <h2>Data Obat</h2>
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
                         <div class="row">
                             <div class="col-sm-12">
-                                <a href="<?=base_url()?>dokter/add_edit" class="btn btn-primary"><i class="fa fa-plus-square"></i> Tambah Dokter</a>
+                                <a href="<?=base_url()?>obat/add_edit" class="btn btn-primary"><i class="fa fa-plus-square"></i> Tambah Obat</a>
                                 <br/>
                                 <br/>
                                 <?=$this->session->flashdata('msg')?>
@@ -20,33 +20,25 @@
                                 <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                                     <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Kode Dokter</th>
-                                        <th>Nama Dokter</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>Tempat Lahir</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Alamat</th>
-                                        <th>No HP</th>
-                                        <th>Aksi</th>
+                                        <th width="12">No</th>
+                                        <th>Nama Obat</th>
+                                        <th>Harga Obat</th>
+                                        <th width="90">Aksi</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                         <?php 
                                             $no = 1;
-                                            foreach($data_dokter as $row) {
+                                            foreach($data_obat as $row) {
                                                 ?>
                                                 <tr>
                                                     <td><?=$no?></td>
-                                                    <td><?php echo $row['kode_dokter'];?></td>
-                                                    <td><?php echo $row['nama_dokter'];?></td>
-                                                    <td><?php echo date("d/m/Y", strtotime($row['tanggal_lahir']));?></td>
-                                                    <td><?php echo $row['tempat_lahir'];?></td>
-                                                    <td><?php if($row['jenis_kelamin'] == "L") { echo "Laki-laki"; }else { echo "Perempuan"; }?></td>
-                                                    <td><?php echo $row['alamat_tinggal'];?></td>
-                                                    <td><?php echo $row['no_hp'];?></td>
-                                                    <td><a href="<?php echo base_url()?>dokter/add_edit/<?php echo $row['kode_dokter']; ?>" 
+                                                    <td><?php echo $row['nama_obat'];?></td>
+                                                    <td><?php echo $row['harga'];?></td>
+                                                    <td><a href="<?php echo base_url()?>obat/add_edit/<?php echo $row['id']; ?>" 
                                                     class="btn btn-info btn-sm" title="edit"><i class="fa fa-pencil"></i></a> 
+                                                    <a href="<?=base_url()?>obat/delete_data/<?=$row['id'];?>" onclick="return confirm('Are you sure to delete data?')" 
+                                                    class="btn btn-danger btn-sm" title="delete"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php
